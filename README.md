@@ -21,6 +21,8 @@ becomes
     
 Methods to produce evenly distributed integers in the ranges [0,n) and [m,n] are also provided.
 
+For details, see [mtwist.coffee](https://github.com/jawj/mtwist/blob/master/mtwist.coffee).
+
 ## Licence
 
 Copyright 2014 George MacKerron and released under the [MIT Licence](http://opensource.org/licenses/MIT).
