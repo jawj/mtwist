@@ -17,7 +17,7 @@ class @MTwist
       @mt[mti] = (uint32mul(1812433253, (@mt[mti - 1] ^ (@mt[mti - 1] >>> 30))) + mti) >>> 0
     @mti = mti
 
-  randomUint32: =>
+  randomUint32: =>  # [0,0xffffffff]
     if @mti >= 624
       for i in [0...227]
         y = ((@mt[i] & 0x80000000) | (@mt[i + 1] & 0x7fffffff)) >>> 0
@@ -38,7 +38,7 @@ class @MTwist
   random: =>  # [0,1), like Math.random
     @randomUint32() / 4294967296  # 2^32
 
-  randomIntBelow: (maxPlusOne) =>  # with proper uniform distribution, per WARNING at http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/efaq.html
+  randomIntBelow: (maxPlusOne) =>  # [0,n) with proper uniform distribution (see WARNING at http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/efaq.html)
     throw "Upper bound must be greater than or equal to 1" if maxPlusOne < 1
     return 0 if maxPlusOne is 1
     bitsNeeded = (maxPlusOne - 1).toString(2).length
@@ -47,7 +47,7 @@ class @MTwist
       int = @randomUint32() & bitMask
       return int if int < maxPlusOne
 
-  randomIntBetween: (inclusiveMin, inclusiveMax) ->
+  randomIntBetween: (inclusiveMin, inclusiveMax) -> # [m,n]
     inclusiveMin + @randomIntBelow(inclusiveMax - inclusiveMin + 1)
 
   @test = ->  # returns true if answer is as calculated using official C implementation
