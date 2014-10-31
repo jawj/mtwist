@@ -1,12 +1,12 @@
 
 class @MTwist
-  
+
   # Mersenne Twister drop-in replacement for Math.random, 
   # including the 2002 improvements to initialization
 
   # Copyright 2014 George MacKerron 
   # Released under the MIT Licence: http://opensource.org/licenses/MIT
-  
+
   constructor: (seed = Math.random() * 4294967295) ->  # seed with a 32-bit integer
     uint32mul = (n1, n2) ->
       n1Low16 = n1 & 0x0000ffff
@@ -50,7 +50,7 @@ class @MTwist
       int = @randomUint32() & bitMask
       return int if int < maxPlusOne
 
-  randomIntBetween: (inclusiveMin, inclusiveMax) -> # [m,n]
+  randomIntBetween: (inclusiveMin, inclusiveMax) =>  # [m,n]
     inclusiveMin + @randomIntBelow(inclusiveMax - inclusiveMin + 1)
 
   @test = ->  # returns true if answer is as calculated using official C implementation

@@ -8,6 +8,7 @@
       if (seed == null) {
         seed = Math.random() * 4294967295;
       }
+      this.randomIntBetween = __bind(this.randomIntBetween, this);
       this.randomIntBelow = __bind(this.randomIntBelow, this);
       this.random = __bind(this.random, this);
       this.randomUint32 = __bind(this.randomUint32, this);
