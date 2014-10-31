@@ -20,3 +20,7 @@ becomes
     x = m.random();
     
 Methods to produce evenly distributed integers in the ranges [0,n) and [m,n] are also provided.
+
+## Licence
+
+Copyright 2014 George MacKerron and released under the (MIT Licence)[http://opensource.org/licenses/MIT].
