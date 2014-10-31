@@ -23,4 +23,4 @@ Methods to produce evenly distributed integers in the ranges [0,n) and [m,n] are
 
 ## Licence
 
-Copyright 2014 George MacKerron and released under the (MIT Licence)[http://opensource.org/licenses/MIT].
+Copyright 2014 George MacKerron and released under the [MIT Licence](http://opensource.org/licenses/MIT).
