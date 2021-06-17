@@ -1,9 +1,8 @@
 
-class @MTwist
+class MTwist
 
   # Mersenne Twister drop-in replacement for Math.random, 
   # including the 2002 improvements to initialization
-
   # Copyright 2014 George MacKerron 
   # Released under the MIT Licence: http://opensource.org/licenses/MIT
 
@@ -20,7 +19,7 @@ class @MTwist
       @mt[mti] = (uint32mul(1812433253, (@mt[mti - 1] ^ (@mt[mti - 1] >>> 30))) + mti) >>> 0
     @mti = mti
 
-  randomUint32: =>  # [0,0xffffffff]
+  randomUInt32: =>  # [0,0xffffffff]
     if @mti >= 624
       for i in [0...227]
         y = ((@mt[i] & 0x80000000) | (@mt[i + 1] & 0x7fffffff)) >>> 0
@@ -39,15 +38,16 @@ class @MTwist
     y
 
   random: =>  # [0,1), like Math.random
-    @randomUint32() / 4294967296  # 2^32
+    @randomUInt32() / 4294967296  # 2^32
 
   randomIntBelow: (maxPlusOne) =>  # [0,n) with proper uniform distribution (see WARNING at http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/efaq.html)
     throw "Upper bound must be greater than or equal to 1" if maxPlusOne < 1
+    throw "Upper bound must not be greater than 4294967296" if maxPlusOne > 4294967296
     return 0 if maxPlusOne is 1
     bitsNeeded = (maxPlusOne - 1).toString(2).length
     bitMask = (1 << bitsNeeded) - 1
     while yes
-      int = @randomUint32() & bitMask
+      int = @randomUInt32() & bitMask
       return int if int < maxPlusOne
 
   randomIntBetween: (inclusiveMin, inclusiveMax) =>  # [m,n]
@@ -58,8 +58,9 @@ class @MTwist
     iterationFactor = 10000  # makes max iterations about 400,000
     for i in [0...1000]
       mtwist = new MTwist seed
-      iterations = Math.floor(mtwist.randomUint32() / iterationFactor)
-      mtwist.randomUint32() for j in [0...iterations]
-      seed = mtwist.randomUint32()
+      iterations = Math.floor(mtwist.randomUInt32() / iterationFactor)
+      mtwist.randomUInt32() for j in [0...iterations]
+      seed = mtwist.randomUInt32()
     seed is 1240212512
 
+module.exports = MTwist

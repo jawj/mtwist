@@ -171,7 +171,8 @@ double genrand_res53(void)
 } 
 /* These real versions are due to Isaku Wada, 2002/01/09 added */
 
-int xmain(void)
+/*
+int main(void)
 {
     int i;
     unsigned long init[4]={0x123, 0x234, 0x345, 0x456}, length=4;
@@ -188,8 +189,9 @@ int xmain(void)
     }
     return 0;
 }
+*/
 
-// generate test number
+// GM: new main() that generates our test number
 
 int main(void) {
   unsigned long seed = 1234567890;
@@ -208,6 +210,6 @@ int main(void) {
 }
 
 // run like so:
-// cc -O0 mt19937ar.c -o /tmp/makeTestOutput && /tmp/makeTestOutput  
+// cc -O2 mt19937ar.c -o /tmp/makeTestOutput && /tmp/makeTestOutput
 // => 1240212512
 
