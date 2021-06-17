@@ -7,6 +7,10 @@
     "build": "npx coffee -c mtwist.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "mtwist.js",
+    "mtwist.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jawj/mtwist.git"
