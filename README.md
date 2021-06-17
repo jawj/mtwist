@@ -25,4 +25,4 @@ For details, see [mtwist.coffee](https://github.com/jawj/mtwist/blob/master/mtwi
 
 ## Licence
 
-Copyright 2014 George MacKerron and released under the [MIT Licence](http://opensource.org/licenses/MIT).
+&copy; Copyright 2014 – 2021 George MacKerron and released under the [MIT Licence](http://opensource.org/licenses/MIT).
