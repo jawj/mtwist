@@ -29,7 +29,7 @@
     "url": "https://github.com/jawj/mtwist/issues"
   },
   "homepage": "https://github.com/jawj/mtwist#readme",
-  "dependencies": {
+  "devDependencies": {
     "coffeescript": "^2.5.1"
   }
 }
