@@ -194,7 +194,7 @@ int main(void)
 // GM: new main() that generates our test number
 
 int main(void) {
-  unsigned long seed = 1234567890;
+  unsigned long seed = 3234567890;
   unsigned long iteration_factor = 10000;  // makes max iterations about 400,000
 
   for (int i = 0; i < 1000; i ++) {
