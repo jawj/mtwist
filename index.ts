@@ -22,6 +22,7 @@ export default class MTwist {
     const n1 = 1812433253;
     for (let mti = 1; mti < 624; mti++) {
       const n2 = this.mt[mti - 1] ^ (this.mt[mti - 1] >>> 30);
+      // uint32 multiplication, low 16 bits and high 16 bits multiplied separately and reassembled:
       this.mt[mti] = ((((n1 & 0xffff0000) * n2) >>> 0) + (((n1 & 0x0000ffff) * n2) >>> 0) + mti) >>> 0;
     }
     this.mti = 624;
