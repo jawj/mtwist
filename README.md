@@ -1,6 +1,6 @@
 # MTwist
 
-* A concise Mersenne Twister implementation in CoffeeScript/JavaScript
+* A concise Mersenne Twister implementation in TypeScript/JavaScript
 * Includes the 2002 initialization improvements
 * Tested against the original C implementation
 
