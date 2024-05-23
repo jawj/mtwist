@@ -25,6 +25,7 @@ becomes
    
     seed = 1234567890;  // an integer between 0 and 4294967295
     m = new MersenneTwister(seed);
+    
     x = m.random();
     
 Methods to produce evenly distributed integers in the ranges [0,n) and [m,n] are also provided.
