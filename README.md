@@ -8,7 +8,7 @@ The library:
 * Is tested against the original C implementation
 * Includes TypeScript types
 
-The Mersenne Twister is not a cutting-edge PRNG. It is not cryptographically secure. But it is very widely used, being the [default PRNG for Excel, R, Python, Ruby and others](https://en.wikipedia.org/wiki/Mersenne_Twister#Applications).
+The Mersenne Twister is not a cutting-edge PRNG. It is not cryptographically secure. It is very widely used, being the [default PRNG for Excel, R, Python, Ruby and others](https://en.wikipedia.org/wiki/Mersenne_Twister#Applications). It is not without [flaws](https://arxiv.org/abs/1910.06437).
 
 ## Why would I use this?
 
